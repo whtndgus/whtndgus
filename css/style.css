@@ -14165,6 +14165,7 @@ span{
   color: black; 
   text-align: center;
   line-height: 100%;
+  transition: all 1s;
 }
 .right-plus{
   border: 10px groove blue;
