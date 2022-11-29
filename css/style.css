@@ -14134,6 +14134,7 @@ hr {
   padding-top: 10%;
   width: 75%;
   max-width: 1000px;
+  min-height: 950px;
   background-image: url(../post_bg.jpg);
   background-size: 100%;
 }
@@ -14141,10 +14142,10 @@ a{
   text-decoration: none;
   font-family: 궁서;
   font-weight: bold;
-  color: green;
+  color: blue;
 }
 a:visited{
-  color: green;
+  color: blue;
 }
 .bf-1{
   width: 75%;
