@@ -14082,6 +14082,12 @@ html:not([dir=rtl]) .wrapper {
 /*# sourceMappingURL=style.css.map */
 
 /*내가 만든 CSS*/
+.marding-side-100{
+  margin: 5px 100px 5px 100px;
+}
+.marding-side-50{
+  margin: 5px 50px 5px 50px;
+}
 .marding-10{
   margin: 10px;
   padding: 10px;
@@ -14195,8 +14201,8 @@ html{
 .left-bar{
   /*border: 2px solid black;*/
   position: sticky;
-  top: 0;
-  margin-top: 10%;
+  top: 15%;
+  margin-top: 25%;
   float: left;
   width: 10%;
   max-width: 120px;

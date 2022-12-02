@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    width: 400px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mid{
+    width: 800px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mid ul{
+    list-style-type: none;
+    margin-bottom: 7px;
+}
+.game-pan{
+    width: 490px;
+    height: 490px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mid li{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+.mid li button{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
