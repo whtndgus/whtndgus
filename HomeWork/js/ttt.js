@@ -1,17 +1,6 @@
-var win = 0;
-var lose = 0;
-
-var pan = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ];
-
-/*var click0 = document.getElementById("btn0");
-var click1 = document.getElementById("btn1");
-var click2 = document.getElementById("btn2");
-var click3 = document.getElementById("btn3");
-var click4 = document.getElementById("btn4");
-var click5 = document.getElementById("btn5");
-var click6 = document.getElementById("btn6");
-var click7 = document.getElementById("btn7");
-var click8 = document.getElementById("btn8");*/
+let win = 0;
+let lose = 0;
+let pan = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ];
 
 
 function tttclick(btn){
@@ -19,7 +8,6 @@ function tttclick(btn){
         pan[0] = 1;
         aisel();
         repan();
-        console.log(pan);
 
     }else if(btn == "btn1" && pan[1] == 0){
         pan[1] = 1;
@@ -65,11 +53,11 @@ function tttclick(btn){
 
 function aisel(){
 
-    for(let i=0; i<=100; i++){
-        let n = Math.floor(Math.random()*8); /*0~8 까지 난수뽑기*/
+    for(let i=0; i<=10000; i++){
+        let n = Math.floor(Math.random()*9); /*0~8 까지 난수뽑기*/
         if (pan[n]==0) {
             pan[n] = 2;
-            break
+            break;
         }
     }
 }
@@ -83,7 +71,7 @@ function finish(){
     alert("승리 : "+win+"  패배 : "+lose);
 }
 
-function ifinish(){
+function finish_rule(){
     for(let i=1; i <= 2; i++) {
         if(pan[0]==i && pan[1]==i && pan[2]==i){
             if(i==1){
@@ -168,26 +156,27 @@ function repan(){
         }
     }
     
-    ifinish();
+    finish_rule();
     
-    if(add(pan) >= 13){
-        /*게임이 끝나는 경우*/
+    if(add(pan) >= 13){ /*게임이 끝나는 경우*/
+        
 
-        pan = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ];/*판 리셋*/
+        pan = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ]; /*판 리셋*/
         alert("무승부");
         for(let i =0; i <= 8; i++){
             var selectbtn = document.querySelector(".btn"+i);
             selectbtn.innerText = "*";
         }
-    }else{
-        /*게임이 끝나지 않은 경우*/
+    }else{ /*게임이 끝나지 않은 경우*/
+        
     }
 
 }
 
 function add(arr) {
-    return arr.reduce((a, b) => a + b, 0);
+    let sum = 0;
+    for(let i of arr){
+        sum += i;
+    }
+    return sum;
 };
- 
-
-
