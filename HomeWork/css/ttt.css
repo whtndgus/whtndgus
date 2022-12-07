@@ -35,3 +35,7 @@
     height: 150px;
     font-size: xx-large;
 }
+.mid li button:hover{
+    cursor: wait;
+}
+

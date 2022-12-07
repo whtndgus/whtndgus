@@ -64,9 +64,11 @@ function aisel(){
 
 function finish(){
     pan = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ];/*판 리셋*/
-        for(let i =0; i <= 8; i++){
-            var selectbtn = document.querySelector(".btn"+i);
-            selectbtn.innerText = "*";
+    for(let i =0; i <= 8; i++){
+        var selectbtn = document.querySelector(".btn"+i);
+        //moff(selectbtn);
+        selectbtn.innerText = "*";
+        moff(selectbtn);
     }
     alert("승리 : "+win+"  패배 : "+lose);
 }
@@ -145,17 +147,30 @@ function finish_rule(){
     }
 }
 
+    
+function mon(tag){
+    tag.style.cursor="crosshair"
+    tag.disabled=true
+}
+
+function moff(tag){
+    tag.style.cursor="wait"
+    tag.disabled=false
+}
+
 function repan(){
     for(let i =0; i <= 8; i++){
         if (pan[i] == 1){
             var selectbtn = document.querySelector(".btn"+i);
+            mon(selectbtn);
             selectbtn.innerText = "O";
         }else if(pan[i] == 2){
             var selectbtn = document.querySelector(".btn"+i);
+            mon(selectbtn);
             selectbtn.innerText = "X";
         }
     }
-    
+
     finish_rule();
     
     if(add(pan) >= 13){ /*게임이 끝나는 경우*/
@@ -166,6 +181,7 @@ function repan(){
         for(let i =0; i <= 8; i++){
             var selectbtn = document.querySelector(".btn"+i);
             selectbtn.innerText = "*";
+            moff(selectbtn);
         }
     }else{ /*게임이 끝나지 않은 경우*/
         
