@@ -148,25 +148,32 @@ function finish_rule(){
 }
 
     
-function mon(tag){
+function monu(tag){
     tag.style.cursor="crosshair"
     tag.disabled=true
+    tag.style.color = "blue"
+}
+function mona(tag){
+    tag.style.cursor="crosshair"
+    tag.disabled=true
+    tag.style.color = "red"
 }
 
 function moff(tag){
     tag.style.cursor="wait"
     tag.disabled=false
+    tag.style.color = "white"
 }
 
 function repan(){
     for(let i =0; i <= 8; i++){
         if (pan[i] == 1){
             var selectbtn = document.querySelector(".btn"+i);
-            mon(selectbtn);
+            monu(selectbtn);
             selectbtn.innerText = "O";
         }else if(pan[i] == 2){
             var selectbtn = document.querySelector(".btn"+i);
-            mon(selectbtn);
+            mona(selectbtn);
             selectbtn.innerText = "X";
         }
     }
